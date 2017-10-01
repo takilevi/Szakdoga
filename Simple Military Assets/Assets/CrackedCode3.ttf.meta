@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8becbb73a8cb78942aba2a245380271b
+timeCreated: 1506787524
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cracked Code
+  fontNames:
+  - Cracked Code3
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 98222ee07689e53418a5f108c6e843b9, type: 3}
+  - {fileID: 12800000, guid: c23c739773e739647b8558e6e4ef4c43, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

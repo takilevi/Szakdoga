@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3741e6e0e12e8694eb1f00c51abda1d2
+timeCreated: 1506844548
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Powderfinger Type
+  fontNames:
+  - Powderfinger Type
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

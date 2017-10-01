@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Military Assets", "Simple Military Assets.csproj", "{B891B703-7776-36DB-90A5-ABD91346FA62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Military Assets.Plugins", "Simple Military Assets.Plugins.csproj", "{4A68CD37-AA57-F7FE-680D-89BCC67DC657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Military Assets.Editor", "Simple Military Assets.Editor.csproj", "{52158CAD-FB56-5C0B-FB33-64C77214BBCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B891B703-7776-36DB-90A5-ABD91346FA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B891B703-7776-36DB-90A5-ABD91346FA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B891B703-7776-36DB-90A5-ABD91346FA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B891B703-7776-36DB-90A5-ABD91346FA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A68CD37-AA57-F7FE-680D-89BCC67DC657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A68CD37-AA57-F7FE-680D-89BCC67DC657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A68CD37-AA57-F7FE-680D-89BCC67DC657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A68CD37-AA57-F7FE-680D-89BCC67DC657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52158CAD-FB56-5C0B-FB33-64C77214BBCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52158CAD-FB56-5C0B-FB33-64C77214BBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52158CAD-FB56-5C0B-FB33-64C77214BBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52158CAD-FB56-5C0B-FB33-64C77214BBCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
