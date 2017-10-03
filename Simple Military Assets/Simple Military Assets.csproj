@@ -91,9 +91,7 @@
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\EffectExamples\Shared\Scripts\ITBullshitHelper.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\JokeFromWebHelper.cs" />
-    <Compile Include="Assets\EffectExamples\Shared\Scripts\NPCTag.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
@@ -143,6 +141,8 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\StartScene\FocusBoxHandler.cs" />
     <Compile Include="Assets\StartScene\MenuChoose.cs" />
+    <Compile Include="Assets\TutorialScene\ITBullshitHelper.cs" />
+    <Compile Include="Assets\TutorialScene\NPCTag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

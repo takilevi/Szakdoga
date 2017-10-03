@@ -952,7 +952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &978515823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,8 +1307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6d0a1ed56b10d44ad362e6f797e4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theBullshit: {fileID: 1385382695}
-  description: {fileID: 0}
 --- !u!1 &1015100561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,6 +2385,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1724755372}
+  - component: {fileID: 1724755373}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -2408,6 +2407,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1724755373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724755371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d0a1ed56b10d44ad362e6f797e4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1749532736
 GameObject:
   m_ObjectHideFlags: 0
