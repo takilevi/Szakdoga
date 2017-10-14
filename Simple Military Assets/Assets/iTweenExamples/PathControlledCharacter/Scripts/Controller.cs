@@ -1,24 +1,28 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class Controller : MonoBehaviour {
 	public Transform[] controlPath;
+    public GameObject wayPoints;
 	public Transform character;
 	public enum Direction {Forward,Reverse};
 	
-	private float pathPosition=0;
+	private float pathPosition= 0.03f;
 	private RaycastHit hit;
 	private float speed = .2f;
 	private float rayLength = 5;
-	private Direction characterDirection;
+	private Direction characterDirection = Direction.Forward;
 	private Vector3 floorPosition;	
 	private float lookAheadAmount = .01f;
 	private float ySpeed=0;
 	private float gravity=.5f;
 	private float jumpForce=.12f;
 	private uint jumpState=0; //0=grounded 1=jumping
-	
-	void OnDrawGizmos(){
+    bool isTriggerOnStart = true;
+
+
+    void OnDrawGizmos(){
 		iTween.DrawPath(controlPath,Color.blue);	
 	}	
 	
@@ -28,7 +32,8 @@ public class Controller : MonoBehaviour {
 		foreach (Transform child in character) {
 			child.gameObject.layer=2;
 		}
-	}
+
+    }
 	
 	
 	void Update(){
@@ -50,7 +55,7 @@ public class Controller : MonoBehaviour {
 		
 		//reverse path movement:
 		if(Input.GetKeyDown("left")){
-			characterDirection=Direction.Reverse;
+			characterDirection=Direction.Forward;
 		}
 		if(Input.GetKey("left")) {
 			//handle path loop around since we can't interpolate a path percentage that's negative(well duh):
@@ -71,7 +76,7 @@ public class Controller : MonoBehaviour {
 	
 	
 	void FindFloorAndRotation(){
-		float pathPercent = pathPosition%1;
+        float pathPercent = pathPosition%1;
 		Vector3 coordinateOnPath = iTween.PointOnPath(controlPath,pathPercent);
 		Vector3 lookTarget;
 		
@@ -87,9 +92,9 @@ public class Controller : MonoBehaviour {
 			
 			//look:
 			character.LookAt(lookTarget);
-			
-			//nullify all rotations but y since we just want to look where we are going:
-			float yRot = character.eulerAngles.y;
+
+            //nullify all rotations but y since we just want to look where we are going:
+            float yRot = character.eulerAngles.y;
 			character.eulerAngles=new Vector3(0,yRot,0);
 		}
 
@@ -99,26 +104,13 @@ public class Controller : MonoBehaviour {
 		}
 
         character.position = new Vector3(coordinateOnPath.x, coordinateOnPath.y, coordinateOnPath.z);
+
+        if ((int)coordinateOnPath.x == (int)(controlPath[2].position.x) &&
+           (int)coordinateOnPath.z == (int)(controlPath[2].position.z))
+        {
+            Debug.Log("nézelõdés");
+        }
     }
 	
 	
-	void MoveCharacter(){
-		//add gravity:
-		ySpeed += gravity * Time.deltaTime;
-		
-		//apply gravity:
-		character.position=new Vector3(floorPosition.x,character.position.y-ySpeed,floorPosition.z);
-		
-		//floor checking:
-		if(character.position.y<floorPosition.y){
-			ySpeed=0;
-			jumpState=0;
-			character.position=new Vector3(floorPosition.x,floorPosition.y,floorPosition.z);
-		}		
-	}
-	
-	
-	void MoveCamera(){
-		iTween.MoveUpdate(Camera.main.gameObject,new Vector3(character.position.x,2.7f,character.position.z-5f),.9f);	
-	}
 }
