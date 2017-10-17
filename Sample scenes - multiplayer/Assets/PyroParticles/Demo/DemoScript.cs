@@ -114,13 +114,12 @@ namespace DigitalRuby.PyroParticles
             }
         }
 
-        [Command]
-        private void CmdUpdateEffect()
+        private void UpdateEffect()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCurrent();
-                NetworkServer.Spawn(currentPrefabObject);
+                
             }
             else if (Input.GetKeyDown(KeyCode.Plus) || Input.GetKeyDown(KeyCode.KeypadPlus))
             {
@@ -146,7 +145,8 @@ namespace DigitalRuby.PyroParticles
             return Mathf.Clamp(angle, min, max);
         }
 
-        private void BeginEffect()
+        [Command]
+        private void CmdBeginEffect()
         {
             Vector3 pos;
             float yRot = transform.rotation.eulerAngles.y;
@@ -192,13 +192,13 @@ namespace DigitalRuby.PyroParticles
             currentPrefabObject.transform.position = pos;
             currentPrefabObject.transform.rotation = rotation;
 
-            
+            NetworkServer.Spawn(currentPrefabObject);
         }
 
         public void StartCurrent()
         {
             StopCurrent();
-            BeginEffect();
+            CmdBeginEffect();
         }
 
         private void StopCurrent()
@@ -246,7 +246,7 @@ namespace DigitalRuby.PyroParticles
             }
             UpdateMovement();
             UpdateMouseLook();
-            CmdUpdateEffect();
+            UpdateEffect();
         }
         public override void OnStartLocalPlayer()
         {
