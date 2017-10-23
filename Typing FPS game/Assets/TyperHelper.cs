@@ -137,7 +137,7 @@ public class TyperHelper : MonoBehaviour
     public void FindScript()
     {
         Component tempScript = currentObjects[globalIndex].GetComponent(typeof(MonoBehaviour));
-        if(tempScript.GetType().Equals(typeof(TerroristScript)))
+        if (tempScript.GetType().Equals(typeof(TerroristScript)))
         {
             TerroristScript tempTerrorist = (TerroristScript)currentObjects[globalIndex].GetComponent(typeof(TerroristScript));
             tempTerrorist.KillToDeath();
@@ -146,6 +146,11 @@ public class TyperHelper : MonoBehaviour
         {
             JungleCommandoScript tempJungle = (JungleCommandoScript)currentObjects[globalIndex].GetComponent(typeof(JungleCommandoScript));
             tempJungle.KillToDeath();
+        }
+        if (tempScript.GetType().Equals(typeof(ZombieScript)))
+        {
+            ZombieScript tempZombie = (ZombieScript)currentObjects[globalIndex].GetComponent(typeof(ZombieScript));
+            tempZombie.KillToDeath();
         }
 
         Killed(currentObjects[globalIndex]);
@@ -164,7 +169,7 @@ public class TyperHelper : MonoBehaviour
         }
 
         LoadNewEnemies(remaining.ToArray());
-        if (remaining.Count==0)
+        if (remaining.Count == 0)
         {
             GoForward = true;
         }

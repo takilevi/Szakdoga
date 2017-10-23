@@ -14,7 +14,8 @@ public class Level2_ControllerFirst : MonoBehaviour {
     private Controller controllerScript;
     private int globalSelector = 0;
 
-    //ZombieScript here
+    ZombieScript zombieScript0;
+    ZombieScript zombieScript1;
 
     TyperHelper typerScript;
 
@@ -26,8 +27,8 @@ public class Level2_ControllerFirst : MonoBehaviour {
         mainStopPoints.Add(98);
         mainStopPoints.Add(99);
 
-        // zombiescript here = (TerroristScript)enemiesSecondStop[0].GetComponent(typeof(TerroristScript));
-
+        zombieScript0 = (ZombieScript)enemies[0].GetComponent(typeof(ZombieScript));
+        zombieScript1 = (ZombieScript)enemies[1].GetComponent(typeof(ZombieScript));
         typerScript = (TyperHelper)GameObject.Find("MainCamera").GetComponent(typeof(TyperHelper));
     }
 
@@ -36,8 +37,7 @@ public class Level2_ControllerFirst : MonoBehaviour {
 
         pathPercent = controllerScript.PathToStop;
         controllerScript.IsMoveEnable = goToNextStopPoint;
-
-        Debug.Log(pathPercent);
+        //Debug.Log(pathPercent);
 
         if (goToNextStopPoint == false)
         {
@@ -55,7 +55,7 @@ public class Level2_ControllerFirst : MonoBehaviour {
             {
                 case 0: DoFirstStop(); break;
                 case 1: DoSecondStop(); break;
-                case 2: DoThirdStop(); break;
+                case 2:  break;
                 default: break;
             }
         }
@@ -77,11 +77,12 @@ public class Level2_ControllerFirst : MonoBehaviour {
     }
     void DoSecondStop()
     {
-        Debug.Log("called first");
+        Debug.Log("called second");
         goToNextStopPoint = false;
 
         //zombies start to chase
-
+        zombieScript0.EnemyHere();
+        zombieScript1.EnemyHere();
         typerScript.LoadNewEnemies(enemies);
         globalSelector++;
     }

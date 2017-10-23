@@ -35,7 +35,6 @@ public class JungleCommandoScript : MonoBehaviour {
     IEnumerator StartFire()
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 2f));
-        //triggers shoot
         animator.SetTrigger("EnemyHere");
         yield return new WaitForSeconds(1f);
         transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward);
