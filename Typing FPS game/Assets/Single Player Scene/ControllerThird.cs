@@ -74,7 +74,7 @@ public class ControllerThird : MonoBehaviour {
     }
     IEnumerator LoadNextSceneAfterWait()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("SINGLE PLAYER 2");
     }
 }
