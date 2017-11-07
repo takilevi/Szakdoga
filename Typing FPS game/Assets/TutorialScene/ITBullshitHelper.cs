@@ -81,7 +81,6 @@ public class ITBullshitHelper : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Debug.Log("bejöttünk");
             if (!firstDone)
             {
                 scriptPolygonCharacter.npcName = firstPartString;

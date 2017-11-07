@@ -118,13 +118,13 @@ public class ControllerSecond : MonoBehaviour
     IEnumerator DoFourthStopWait()
     {
         yield return new WaitForSeconds(4.5f);
-        controllerScript.speed = 0.10f;
+        controllerScript.speed = 0.08f;
         goToNextStopPoint = true;
     }
     void DoFifthStop()
     {
         Debug.Log("called fourth");
-        controllerScript.speed = 0.17f;
+        controllerScript.speed = 0.09f;
         nextGameObject.SetActive(true);
         currentGameObject.SetActive(false);
 

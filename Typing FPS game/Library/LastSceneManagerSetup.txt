@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Single Player Scene/SINGLE PLAYER.unity
+- path: Assets/Single Player Scene/SINGLE PLAYER 3.unity
   isLoaded: 1
   isActive: 1

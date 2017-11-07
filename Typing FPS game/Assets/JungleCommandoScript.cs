@@ -28,7 +28,6 @@ public class JungleCommandoScript : MonoBehaviour {
         Text jungleText = (Text)thisCanvas.GetComponentInChildren<Text>();
         WordHelper script = (WordHelper)playerObject.GetComponent(typeof(WordHelper));
         jungleText.text = script.GetAdjective();
-        jungleText.text += " " + script.GetNoun();
 
         StartCoroutine(StartFire());
     }

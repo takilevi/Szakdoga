@@ -8,23 +8,35 @@ public class ZombieScript : MonoBehaviour
     public GameObject playerObject;
     public GameObject thisObject;
     public GameObject thisCanvas;
+    private bool firstIdle = true;
     private bool letsMove = false;
     Animator anim;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+    }
+    public void IdleTrigger()
+    {
+        StartCoroutine(WaitFirstTrigger());
+
+    }
+    IEnumerator WaitFirstTrigger()
+    {
+        yield return new WaitForSeconds(Random.Range(0f, 2f));
         float idleSwitch = Random.Range(0f, 1f);
         anim.SetFloat("IdleSwitch", idleSwitch);
+        anim.SetTrigger("IdleTrigger");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
         if (letsMove)
         {
             float distance = Vector3.Distance(playerObject.transform.position, this.transform.position);
             //Debug.Log("távolság float: " + distance + "  objectneve: "+this.name);
-            if(distance <= 5.5f)
+            if(distance <= 4.5f)
             {
                 AttackEnemy();
             }
@@ -34,6 +46,11 @@ public class ZombieScript : MonoBehaviour
                                         playerObject.transform.position.z);
             this.transform.LookAt(targetPostition);
             transform.position += transform.forward * 0.5f * Time.deltaTime;
+        }
+        if(firstIdle)
+        {
+            IdleTrigger();
+            firstIdle = !firstIdle;
         }
     }
 

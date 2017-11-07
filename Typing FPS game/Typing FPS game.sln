@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Typing FPS game", "Typing F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Typing FPS game.Plugins", "Typing FPS game.Plugins.csproj", "{B4AF8A0A-35DF-433D-6D78-C682B8D8036F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Typing FPS game.Editor", "Typing FPS game.Editor.csproj", "{3C79A2FE-0A98-879C-506D-9793A0DF829A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{B4AF8A0A-35DF-433D-6D78-C682B8D8036F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4AF8A0A-35DF-433D-6D78-C682B8D8036F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4AF8A0A-35DF-433D-6D78-C682B8D8036F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C79A2FE-0A98-879C-506D-9793A0DF829A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C79A2FE-0A98-879C-506D-9793A0DF829A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C79A2FE-0A98-879C-506D-9793A0DF829A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C79A2FE-0A98-879C-506D-9793A0DF829A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

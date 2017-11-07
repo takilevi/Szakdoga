@@ -21,20 +21,20 @@ public class GunShoot : MonoBehaviour {
 
     public bool FireIt = false;
 
-	private float nextFire;												// Float to store the time the player will be allowed to fire again, after firing
+	private float nextFire = 0.5f;												// Float to store the time the player will be allowed to fire again, after firing
 	private Animator anim;
 	private GunAim gunAim;
 
 	void Start () 
 	{
 		anim = GetComponent<Animator> ();
-		gunAim = GetComponentInParent<GunAim>();
 	}
 
 	void Update () 
 	{
+        gunAim = GetComponentInParent<GunAim>();
         //if (Input.GetButtonDown("Fire1") && Time.time > nextFire && !gunAim.GetIsOutOfBounds())
-        if (FireIt && Time.time > nextFire && !gunAim.GetIsOutOfBounds())
+        if (FireIt && Time.time > nextFire )
         {
 			nextFire = Time.time + fireRate;
 			muzzleFlash.Play();

@@ -55,7 +55,6 @@ public class FocusBoxHandler : MonoBehaviour {
         }
         else
         {
-            Debug.Log("bejöttem ide ahova akkor szabad ha null");
             FirstCapitalTypeing();
         }
     }

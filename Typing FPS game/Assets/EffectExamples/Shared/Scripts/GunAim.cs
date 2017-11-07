@@ -9,39 +9,30 @@ public class GunAim:MonoBehaviour
 	public int borderBottom;
     public float mouseX;
     public float mouseY;
+    public float mouseZ;
 
-	private Camera parentCamera;
-	private bool isOutOfBounds;
+    private Camera parentCamera;
 
 	void Start () 
 	{
-		parentCamera = GetComponentInParent<Camera>();
-	}
+        mouseX = 535f;
+        mouseY = 265f;
+        mouseZ = 20f;
+        parentCamera = GetComponentInParent<Camera>();
+        transform.LookAt(parentCamera.ScreenToWorldPoint(new Vector3(mouseX, mouseY, mouseZ)));
+    }
 
 	void Update()
 	{
-		mouseX = Input.mousePosition.x;
-		mouseY = Input.mousePosition.y;
-        //Debug.Log(Input.mousePosition);
-
-		if (mouseX <= borderLeft || mouseX >= Screen.width - borderRight || mouseY <= borderBottom || mouseY >= Screen.height - borderTop) 
-		{
-			isOutOfBounds = true;
-		} 
-		else 
-		{
-			isOutOfBounds = false;
-		}
-
-		if (!isOutOfBounds)
-		{
-			transform.LookAt(parentCamera.ScreenToWorldPoint (new Vector3(mouseX, mouseY, 5.0f)));
-		}
+        //mouseX = Input.mousePosition.x;
+        //mouseY = Input.mousePosition.y;
+        //mouseZ = Input.mousePosition.z;
+        //Debug.Log("x mouse: "+mouseX+" y mouse: "+mouseY+" z mouse: "+ mouseZ);
+        //Debug.Log("y koord: " + mouseY+"screen height: "+Screen.height);
+        //Debug.Log("Lookat transf: "+ parentCamera.ScreenToWorldPoint(new Vector3(mouseX, mouseY, mouseZ)));
+        
+        transform.LookAt(parentCamera.ScreenToWorldPoint (new Vector3(mouseX, mouseY, mouseZ)));
 	}
 
-	public bool GetIsOutOfBounds()
-	{
-		return isOutOfBounds;
-	}
 }
 

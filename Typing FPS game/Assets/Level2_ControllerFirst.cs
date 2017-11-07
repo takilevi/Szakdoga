@@ -16,6 +16,10 @@ public class Level2_ControllerFirst : MonoBehaviour {
 
     ZombieScript zombieScript0;
     ZombieScript zombieScript1;
+    ZombieScript zombieScript2;
+    ZombieScript zombieScript3;
+    ZombieScript zombieScript4;
+    ZombieScript zombieScript5;
 
     TyperHelper typerScript;
 
@@ -29,8 +33,14 @@ public class Level2_ControllerFirst : MonoBehaviour {
 
         zombieScript0 = (ZombieScript)enemies[0].GetComponent(typeof(ZombieScript));
         zombieScript1 = (ZombieScript)enemies[1].GetComponent(typeof(ZombieScript));
+        zombieScript2 = (ZombieScript)enemies[2].GetComponent(typeof(ZombieScript));
+        zombieScript3 = (ZombieScript)enemies[3].GetComponent(typeof(ZombieScript));
+        zombieScript4 = (ZombieScript)enemies[4].GetComponent(typeof(ZombieScript));
+        zombieScript5 = (ZombieScript)enemies[5].GetComponent(typeof(ZombieScript));
+
         typerScript = (TyperHelper)GameObject.Find("MainCamera").GetComponent(typeof(TyperHelper));
     }
+
 
     // Update is called once per frame
     void Update() {
@@ -55,7 +65,7 @@ public class Level2_ControllerFirst : MonoBehaviour {
             {
                 case 0: DoFirstStop(); break;
                 case 1: DoSecondStop(); break;
-                case 2:  break;
+                case 2: DoThirdStop(); break;
                 default: break;
             }
         }
@@ -83,6 +93,10 @@ public class Level2_ControllerFirst : MonoBehaviour {
         //zombies start to chase
         zombieScript0.EnemyHere();
         zombieScript1.EnemyHere();
+        zombieScript2.EnemyHere();
+        zombieScript3.EnemyHere();
+        zombieScript4.EnemyHere();
+        zombieScript5.EnemyHere();
         typerScript.LoadNewEnemies(enemies);
         globalSelector++;
     }

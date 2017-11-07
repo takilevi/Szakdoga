@@ -7,12 +7,19 @@ public class TerroristScript : MonoBehaviour {
     public GameObject playerObject;
     public GameObject thisObject;
     public GameObject thisCanvas;
+    private PlayGunShoot playGunShoot;
 
     Animator animator;
 
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
+        animator.SetFloat("Idle", Random.Range(0f, 1f));
+
+        playGunShoot = animator.GetBehaviour<PlayGunShoot>();
+
+        // Set the StateMachineBehaviour's reference to an ExampleMonoBehaviour to this.
+        playGunShoot.monoBehaviour = this;
     }
 	
 	// Update is called once per frame
@@ -21,18 +28,22 @@ public class TerroristScript : MonoBehaviour {
 	}
     public void TurnToPlayer()
     {
-        transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward);
+        Vector3 targetPostition = new Vector3(playerObject.transform.position.x,
+                                        this.transform.position.y,
+                                        playerObject.transform.position.z);
+        this.transform.LookAt(targetPostition);
         thisCanvas.SetActive(true);
         Text terrorText = (Text)thisCanvas.GetComponentInChildren<Text>();
         WordHelper script = (WordHelper)playerObject.GetComponent(typeof(WordHelper));
-        terrorText.text = script.GetVerb();
-        terrorText.text += " " + script.GetAdjective();
+        terrorText.text = script.GetSentence();
+
+        animator.SetTrigger("EnemyAppears");
 
         StartCoroutine(StartFire());
     }
     IEnumerator StartFire()
     {
-        yield return new WaitForSeconds(Random.Range(0.5f,2f));
+        yield return new WaitForSeconds(Random.Range(0.5f,3f));
         //triggers shoot
         animator.SetTrigger("Shoot");
     }
@@ -45,7 +56,7 @@ public class TerroristScript : MonoBehaviour {
     }
     IEnumerator DestroyAfterDeath()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         Destroy(thisObject);
     }
 }

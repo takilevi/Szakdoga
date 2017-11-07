@@ -97,6 +97,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 50bc42aec0324e8da9962d40b2a714a9 Assembly-CSharp.dll:.ParticleMenu
 3579780e27f7172173a7c5cb7936df7a Assembly-UnityScript.dll:.AccurateLob
 b9254725f92de8d1e87b24f0e67a283c Assembly-UnityScript.dll:.Ticker
+28667794daaa3a1b87209355cb584da5 Assembly-CSharp.dll:.LightScript
 b9254725f92de8d1e87b24f0e67a283c Assembly-CSharp.dll:.Ticker
 ccb97743655157257cb8df1c22b9858f Assembly-CSharp.dll:.PathExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.SimpleCameraFade
@@ -139,6 +140,7 @@ abcf8f6b1a074f60138d0ea456a7aa58 Assembly-CSharp.dll:.CallbacksExample
 abcf8f6b1a074f60138d0ea456a7aa58 Assembly-UnityScript.dll:.CallbacksExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.Crosshair
 5d1cb613eeeff946b6e363cfafda323f Assembly-CSharp.dll:.GunShoot
+fc8a92c6c6635748237cb6d558b189e7 Assembly-CSharp.dll:.Level2_ControllerSecond
 8fa6827a3d7e9a72ddf64f59b48ba40f Assembly-CSharp.dll:.PresentationScreen
 267e73b0023dd4cb21e4496342545ef9 Assembly-CSharp.dll:.GameBoardCSharp
 07701aa818d962a77e81dc66b620136d Assembly-CSharp.dll:.DecalDestroyer
@@ -158,7 +160,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 ec4253b21b64232296ab0860c616a4ca Assembly-CSharp.dll:.SlidingMenu
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Platform
 13c70021a2910d5bb2bd29cb0e4647e1 Assembly-CSharp.dll:.ControllerFirst
-547e24c3f85b1eae4448f7fdc2d525a3 Assembly-CSharp.dll:.GunAim
+9bf3124188bdaa028e7ce5e957955494 Assembly-CSharp.dll:.GunAim
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.CameraController
 79da097e11ccb4e9d35c5a5f435a1bf1 Assembly-CSharp.dll:.Puppeteer
 8097891f0faf28f3f2ccb054af7fc7e5 Assembly-CSharp.dll:.ControllerThird
@@ -204,6 +206,7 @@ c8fe9fad8974afe9c860f3c66983c796 Assembly-UnityScript.dll:.BoardControl
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-UnityScript.dll:.PathCameraController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SimpleCameraFade
+fc8a92c6c6635748237cb6d558b189e7 Assembly-CSharp.dll:.Level3_ControllerFirst
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.Platform
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput

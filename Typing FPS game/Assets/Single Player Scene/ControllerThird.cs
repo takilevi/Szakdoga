@@ -40,12 +40,14 @@ public class ControllerThird : MonoBehaviour {
 
         if (goToNextStopPoint == false)
         {
-            if (typerScript.GoForward)
+            if (typerScript.GoForward && globalSelector == 1)
+            {
+                StartCoroutine(LoadNextSceneAfterWait());
+            }
+            else if (typerScript.GoForward)
             {
                 goToNextStopPoint = true;
                 typerScript.GoForward = false;
-
-                LoadNextScene();
             }
         }
 
@@ -68,13 +70,9 @@ public class ControllerThird : MonoBehaviour {
         typerScript.LoadNewEnemies(enemiesFirstStop);
         globalSelector++;
     }
-    void LoadNextScene()
-    {
-        StartCoroutine(LoadNextSceneAfterWait());
-    }
     IEnumerator LoadNextSceneAfterWait()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("SINGLE PLAYER 2");
     }
 }

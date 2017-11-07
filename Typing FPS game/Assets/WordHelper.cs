@@ -34,32 +34,25 @@ public class WordHelper : MonoBehaviour {
     "mindshare", "deliverables", "users", "schemas", "networks", "applications", "metrics", "e-business", "functionalities",
     "experiences", "web services", "methodologies" };
 
-    
+    ArrayList sentences = new ArrayList();
+    string[] sentenceArray = {"Close But No Cigar", "Hear, Hear", "Right Out of the Gate", "Quality Time", "Burst Your Bubble", "Two Down, One to Go",
+    "Dropping Like Flies", "Top Drawer", "An Arm and a Leg", "Drawing a Blank", "Man of Few Words", "Knock Your Socks Off", "Roll With the Punches",
+    "Hands Down", "Fool's Gold", "Hit Below The Belt", "There's No I in Team", "Back to Square One", "A Piece of Cake", "Right Off the Bat",
+    "Cup Of Joe", "In a Pickle", "Elephant in the Room", "Mouth-watering", "Quality Time"};
+
 
     // Use this for initialization
     void Start () {
         verbs.AddRange(verbArray);
         adjectives.AddRange(adjArray);
         nouns.AddRange(nounArray);
-
-        GetResult();
-
+        sentences.AddRange(sentenceArray);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-    public void GetResult()
-    {
-        int index1 = UnityEngine.Random.Range(0, verbs.Count - 1);
-        int index2 = UnityEngine.Random.Range(0, adjectives.Count - 1);
-        int index3 = UnityEngine.Random.Range(0, nouns.Count - 1);
-
-        //Debug.Log(verbs[index1] + "..." + adjectives[index2] + "..." + nouns[index3]);
-
-    }
     public string GetVerb()
     {
         int index1 = UnityEngine.Random.Range(0, verbs.Count - 1);
@@ -74,5 +67,10 @@ public class WordHelper : MonoBehaviour {
     {
         int index3 = UnityEngine.Random.Range(0, nouns.Count - 1);
         return (string)nouns[index3];
+    }
+    public string GetSentence()
+    {
+        int index4 = UnityEngine.Random.Range(0, sentences.Count - 1);
+        return (string)sentences[index4];
     }
 }

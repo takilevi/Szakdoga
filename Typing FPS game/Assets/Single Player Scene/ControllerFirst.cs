@@ -10,6 +10,7 @@ public class ControllerFirst : MonoBehaviour
     public GameObject[] enemiesSecondStop;
     public GameObject[] enemiesFourthStop;
     public ArrayList mainStopPoints = new ArrayList();
+    public AudioClip introClip;
     public AudioClip firstStopAudio;
     public AudioClip secondStopAudio;
     public AudioClip thirdStopAudio;
@@ -29,6 +30,7 @@ public class ControllerFirst : MonoBehaviour
     {
         controllerScript = this.GetComponent<Controller>();
         pathPercent = controllerScript.PathToStop;
+        mainStopPoints.Add(4);
         mainStopPoints.Add(18);
         mainStopPoints.Add(46);
         mainStopPoints.Add(82);
@@ -54,7 +56,7 @@ public class ControllerFirst : MonoBehaviour
             {
                 goToNextStopPoint = true;
                 typerScript.GoForward = false;
-
+                Debug.Log("továbbmehetünk: " + Time.time);
             }
         }
 
@@ -62,18 +64,32 @@ public class ControllerFirst : MonoBehaviour
         {
             switch (globalSelector)
             {
-                case 0: DoFirstStop(); break;
-                case 1:
+                case 0: DoIntro(); break;
+                case 1: DoFirstStop(); break;
+                case 2:
                     DoSecondStop();
                     break;
-                case 2:
+                case 3:
                     DoThirdStop();
                     break;
-                case 3: DoFourthStop(); break;
-                case 4: DoFifthStop(); break;
+                case 4: DoFourthStop(); break;
+                case 5: DoFifthStop(); break;
                 default: break;
             }
         }
+    }
+
+    void DoIntro()
+    {
+        AudioSource.PlayClipAtPoint(introClip, controllerScript.character.position, 1f);
+        goToNextStopPoint = false;
+        StartCoroutine(DoIntoWait());
+        globalSelector++;
+    }
+    IEnumerator DoIntoWait()
+    {
+        yield return new WaitForSeconds(5f);
+        goToNextStopPoint = true;
     }
 
     void DoFirstStop()
@@ -91,7 +107,7 @@ public class ControllerFirst : MonoBehaviour
     }
     void DoSecondStop()
     {
-        Debug.Log("called second");
+        Debug.Log("called second at time: "+ Time.time);
         AudioSource.PlayClipAtPoint(secondStopAudio, controllerScript.character.position, 1f);
         goToNextStopPoint = false;
         StartCoroutine(DoSecondStopWait());
@@ -117,7 +133,7 @@ public class ControllerFirst : MonoBehaviour
     IEnumerator DoThirdStopWait()
     {
         yield return new WaitForSeconds(4.5f);
-        controllerScript.speed = 0.10f;
+        controllerScript.speed = 0.05f;
         goToNextStopPoint = true;
     }
     void DoFourthStop()
@@ -135,7 +151,7 @@ public class ControllerFirst : MonoBehaviour
     void DoFifthStop()
     {
         Debug.Log("called fourth");
-        controllerScript.speed = 0.17f;
+        controllerScript.speed = 0.10f;
         nextGameObject.SetActive(true);
         currentGameObject.SetActive(false);
 
