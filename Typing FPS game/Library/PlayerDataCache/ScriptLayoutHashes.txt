@@ -101,6 +101,7 @@ b9254725f92de8d1e87b24f0e67a283c Assembly-UnityScript.dll:.Ticker
 b9254725f92de8d1e87b24f0e67a283c Assembly-CSharp.dll:.Ticker
 ccb97743655157257cb8df1c22b9858f Assembly-CSharp.dll:.PathExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.SimpleCameraFade
+30ad8a09875890b2e10cb41c365871c9 Assembly-CSharp.dll:DigitalRuby.PyroParticles.FireProjectileScript
 03304ba76ad8422ca24b1829b7adbd36 Assembly-CSharp.dll:.JungleCommandoScript
 a4da7b815e8702d54b4183ac74620bfa Assembly-CSharp.dll:.Controller
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.JokeFromWebHelper
@@ -139,6 +140,7 @@ ac8d1a5f183f101dfe89ee49ccb1b014 Assembly-UnityScript.dll:.CharController
 abcf8f6b1a074f60138d0ea456a7aa58 Assembly-CSharp.dll:.CallbacksExample
 abcf8f6b1a074f60138d0ea456a7aa58 Assembly-UnityScript.dll:.CallbacksExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.Crosshair
+34cc888a35f550e5f6d40b4f0d846418 Assembly-CSharp.dll:DigitalRuby.PyroParticles.MeteorSwarmScript
 5d1cb613eeeff946b6e363cfafda323f Assembly-CSharp.dll:.GunShoot
 fc8a92c6c6635748237cb6d558b189e7 Assembly-CSharp.dll:.Level2_ControllerSecond
 8fa6827a3d7e9a72ddf64f59b48ba40f Assembly-CSharp.dll:.PresentationScreen
@@ -158,8 +160,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 2f7158be76c76495956b12fbd3e8642e Assembly-CSharp.dll:.Turret
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Gizmo
 ec4253b21b64232296ab0860c616a4ca Assembly-CSharp.dll:.SlidingMenu
+ee8a4e5e09beace7544b4577d52051db Assembly-CSharp.dll:.PlayerHealth
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Platform
-13c70021a2910d5bb2bd29cb0e4647e1 Assembly-CSharp.dll:.ControllerFirst
+1dd5afbe72b78672a791f893fdff3e5f Assembly-CSharp.dll:DigitalRuby.PyroParticles.FireBaseScript
+f17e1711b7fbc113e5b8518b81bb6bd2 Assembly-CSharp.dll:.ControllerFirst
+03304ba76ad8422ca24b1829b7adbd36 Assembly-CSharp.dll:.ArmyScript
 9bf3124188bdaa028e7ce5e957955494 Assembly-CSharp.dll:.GunAim
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.CameraController
 79da097e11ccb4e9d35c5a5f435a1bf1 Assembly-CSharp.dll:.Puppeteer
@@ -175,6 +180,7 @@ ccb97743655157257cb8df1c22b9858f Assembly-UnityScript.dll:.PathExample
 ec4253b21b64232296ab0860c616a4ca Assembly-UnityScript.dll:.SlidingMenu
 dcc8d921ca05d9ed007b19022cca08f4 Assembly-CSharp.dll:.Bolt
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Crosshair
+43294ec8a676944978bb7198ea43935c Assembly-CSharp.dll:DigitalRuby.PyroParticles.FireLightScript
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.LightController
 51fb88891072130f7714c639cfe4d73f Assembly-CSharp.dll:.PutOnPathExample
 79da097e11ccb4e9d35c5a5f435a1bf1 Assembly-UnityScript.dll:.Puppeteer
@@ -198,15 +204,18 @@ d5bfe41cb263672b0156d422f828e0aa Assembly-CSharp.dll:.TitleScreen
 ac8d1a5f183f101dfe89ee49ccb1b014 Assembly-CSharp.dll:.CharController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RotatingUnityGUI
 2e87cd05ecd3fa8e589214d85a0b08c7 Assembly-UnityScript.dll:.Path
-b6cc99d6e1a60583c6ee7ac7b8092c7f Assembly-CSharp.dll:.TyperHelper
+54aa9a7175b0d990a469a66a6dfaca2d Assembly-CSharp.dll:.TyperHelper
 2e87cd05ecd3fa8e589214d85a0b08c7 Assembly-CSharp.dll:.Path
 c8fe9fad8974afe9c860f3c66983c796 Assembly-UnityScript.dll:.BoardControl
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-UnityScript.dll:.PathCameraController
+b5d19a31376841b4915cb3000389a582 Assembly-CSharp.dll:.Level3_ControllerSecond
+4e6d5dd8f4b397d2deebc5f0d92c772f Assembly-CSharp.dll:.MissileScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SimpleCameraFade
-fc8a92c6c6635748237cb6d558b189e7 Assembly-CSharp.dll:.Level3_ControllerFirst
+3b518806527d218e46662c706afc5fc6 Assembly-CSharp.dll:.Level3_ControllerFirst
+92b76211a4844fb031bf26ac6e2f8cfd Assembly-CSharp.dll:.LaunchRocket
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.Platform
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -225,6 +234,7 @@ ba4fdae59956c3797a93d70d22a83de3 Assembly-CSharp.dll:.WaypointExample
 03304ba76ad8422ca24b1829b7adbd36 Assembly-CSharp.dll:.TerroristScript
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.PathCameraController
 5a76215ca2cce539e3996a297803a1b8 Assembly-CSharp.dll:.Bomb
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:DigitalRuby.PyroParticles.FireCollisionForwardScript
 8fa6827a3d7e9a72ddf64f59b48ba40f Assembly-UnityScript.dll:.PresentationScreen
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ITBullshitHelper
 94eaa8654a967b03c841443e8ef0bdb6 Assembly-CSharp.dll:.FocusBoxHandler
@@ -233,6 +243,8 @@ ba4fdae59956c3797a93d70d22a83de3 Assembly-CSharp.dll:.WaypointExample
 c729f9d04bdd594da5d03e39bd4a9d48 Assembly-UnityScript.dll:.AnimatingUnityGUI
 08f6a6345422b6e258d8db08eb563069 Assembly-UnityScript.dll:.CameraFadeExample
 1125a365176c17291197ac478a3f2368 Assembly-UnityScript.dll:.Controller
+1dd5afbe72b78672a791f893fdff3e5f Assembly-CSharp.dll:DigitalRuby.PyroParticles.FireConstantBaseScript
+c62de34596d1eba8885d9c779448de1a Assembly-CSharp.dll:.PlayGunShoot
 1cef90cd186e26401a49cc1886757220 Assembly-CSharp.dll:.FlythroughCameraController
 a705bc4199324a09b42ce0048abf320f Assembly-UnityScript.dll:.BoxControl
 1cef90cd186e26401a49cc1886757220 Assembly-UnityScript.dll:.FlythroughCameraController
