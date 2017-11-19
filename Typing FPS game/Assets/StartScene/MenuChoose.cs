@@ -17,14 +17,20 @@ public class MenuChoose : MonoBehaviour {
     private string originalString;
     public GameObject mainMenu;
     public GameObject subMenu;
-
+    private bool stopNavigate = false;
+    public WordHelper wordScript;
     FocusBoxSubMenu submenuScript;
     FocusBoxHandler mainMenuScript;
 
+    private void Reset()
+    {
+        stopNavigate = false;
+    }
     // Use this for initialization
     void Start () {
         submenuScript = (FocusBoxSubMenu)subMenu.GetComponent(typeof(FocusBoxSubMenu));
         mainMenuScript = (FocusBoxHandler)mainMenu.GetComponent(typeof(FocusBoxHandler));
+        wordScript = this.GetComponent(typeof(WordHelper)) as WordHelper;
     }
 	
 	// Update is called once per frame
@@ -33,7 +39,7 @@ public class MenuChoose : MonoBehaviour {
         foreach (char c in Input.inputString)
         {
             if (choosenOne == null)
-            { //that was handled before
+            { 
             }
             else
             {
@@ -44,9 +50,9 @@ public class MenuChoose : MonoBehaviour {
                 else
                 {
                     StringBuilder sb = new StringBuilder();
-                    Debug.Log(menuCharSet[correctCharNumb]);
+                    //Debug.Log(menuCharSet[correctCharNumb]);
                     
-                    if (char.ToUpper(c) == menuCharSet[correctCharNumb])
+                    if (correctCharNumb < menuCharSet.Count && char.ToUpper(c) == menuCharSet[correctCharNumb])
                     {
                         Debug.Log("ascii code: "+(int)c);
                         correctCharNumb++;
@@ -61,7 +67,7 @@ public class MenuChoose : MonoBehaviour {
             
         }
 
-        if (correctCharNumb == menuCharSet.Count)
+        if (correctCharNumb == menuCharSet.Count && correctCharNumb!=0)
         {
             NavigateToNextScene();
         }
@@ -69,15 +75,21 @@ public class MenuChoose : MonoBehaviour {
 
     private void NavigateToNextScene()
     {
-        switch (originalString)
+        Debug.Log(stopNavigate);
+        if (!stopNavigate)
         {
-            case "TUTORIAL": SceneManager.LoadScene("TUTORIAL");break;
-            case "SINGLE PLAYER": subMenu.SetActive(true); mainMenu.SetActive(false); break;
-            case "MULTI PLAYER": SceneManager.LoadScene("TUTORIAL"); break;
-            case "BACK": mainMenuScript.DisableOnRestart(); mainMenu.SetActive(true); subMenu.SetActive(false);  break;
-            case "FIRST": SceneManager.LoadScene("SINGLE PLAYER"); break;
-            case "SECOND": SceneManager.LoadScene("SINGLE PLAYER 2"); break;
-            case "THIRD": SceneManager.LoadScene("SINGLE PLAYER 3"); break;
+            switch (originalString)
+            {
+                case "TUTORIAL": SceneManager.LoadScene("TUTORIAL"); break;
+                case "SINGLE PLAYER": subMenu.SetActive(true); mainMenu.SetActive(false); break;
+                case "MULTI PLAYER": SceneManager.LoadScene("TUTORIAL"); break;
+                case "BACK": mainMenuScript.DisableOnRestart(); mainMenu.SetActive(true); subMenu.SetActive(false); break;
+                case "FIRST": SceneManager.LoadScene("SINGLE PLAYER"); break;
+                case "SECOND": SceneManager.LoadScene("SINGLE PLAYER 2"); break;
+                case "THIRD": SceneManager.LoadScene("SINGLE PLAYER 3"); break;
+                case "LOAD FILE": OpenFilePicker(); stopNavigate = true; break;
+            }
+            
         }
         
     }
@@ -101,5 +113,74 @@ public class MenuChoose : MonoBehaviour {
         sb.Append(originalString.Substring(correctCharNumb));
         choosenOne.GetComponent<UnityEngine.UI.Text>().text = sb.ToString();
 
+    }
+
+    void OpenFilePicker()
+    {
+        //Application.OpenURL((Application.dataPath) + "/FilePicker");
+        var newTyperText = Resources.Load("typerResource") as TextAsset;
+        //Debug.Log(newTyperText.text);
+        if(newTyperText == null)
+        {
+            GameObject child = choosenOne.transform.GetChild(0).gameObject;
+            child.GetComponent<UnityEngine.UI.Text>().text = "THIS FILE IS NOT ELIGIBLE TO LOAD";
+            StartCoroutine(LoadNextSceneAfterWait(child));
+        }
+        if (newTyperText != null && !CheckFormatting(newTyperText.text))
+        {
+            GameObject child = choosenOne.transform.GetChild(0).gameObject;
+            child.GetComponent<UnityEngine.UI.Text>().text = "FORMAT DOES NOT MATCH THE REQUIREMENTS";
+            StartCoroutine(LoadNextSceneAfterWait(child));
+        }
+        if (newTyperText != null && CheckFormatting(newTyperText.text))
+        {
+            GameObject child = choosenOne.transform.GetChild(0).gameObject;
+            child.GetComponent<UnityEngine.UI.Text>().text = "<color=green>SUCCESFULL LOAD</color>";
+            StartCoroutine(LoadNextSceneAfterWait(child));
+        }
+    }
+    bool CheckFormatting(String rawText)
+    {
+        string[] splitString = rawText.Split('\n');
+        if(splitString.Length != 4)
+        { return false; }
+
+        string[] firstArray = splitString[0].Split(',');
+        string[] secondArray = splitString[1].Split(',');
+        string[] thirdArray = splitString[2].Split(',');
+        string[] fourthArray = splitString[3].Split(',');
+
+        foreach (var item in firstArray)
+        {
+            if(item.Length >= 15)
+            { return false; }
+        }
+        foreach (var item in secondArray)
+        {
+            if (item.Length >= 15)
+            { return false; }
+        }
+        foreach (var item in thirdArray)
+        {
+            if (item.Length >= 15)
+            { return false; }
+        }
+        foreach (var item in fourthArray)
+        {
+            if (item.Length > 20)
+            { return false; }
+        }
+
+        wordScript.LoadData(firstArray, secondArray, thirdArray, fourthArray);
+
+        return true;
+    }
+
+    IEnumerator LoadNextSceneAfterWait(GameObject child)
+    {
+        yield return new WaitForSeconds(3.5f);
+        child.GetComponent<UnityEngine.UI.Text>().text = "";
+        stopNavigate = false;
+        SceneManager.LoadScene("start_scene");
     }
 }

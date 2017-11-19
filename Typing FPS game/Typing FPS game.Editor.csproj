@@ -142,6 +142,7 @@
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\Resources\typerResource.txt" />
     <None Include="Assets\SimpleMilitary\Old\Materials\UnlitVertexColour_Alpha.shader" />
     <None Include="Assets\SimpleMilitary\Old\ReadMe.txt" />
   </ItemGroup>

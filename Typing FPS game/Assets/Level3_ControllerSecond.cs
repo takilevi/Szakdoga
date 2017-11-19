@@ -142,7 +142,7 @@ public class Level3_ControllerSecond : MonoBehaviour {
     }
     IEnumerator LoadNextSceneAfterWait()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene("start_scene");
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using SimpleJSON;
 using System.Text;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ITBullshitHelper : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class ITBullshitHelper : MonoBehaviour
     private string secondPartString;
     private bool firstDone = false;
     private bool secondDone = false;
+    private bool isDone = false;
+    public Text mainCameraText;
+    private const float ASPECT_RATIO_MULTIPLIER = 0.519f;
 
     void Start()
     {
@@ -38,7 +42,7 @@ public class ITBullshitHelper : MonoBehaviour
     IEnumerator WaitForRequest(WWW www)
     {
         yield return www;
-
+        
         var N = JSON.Parse(www.text);
 
         ITBullshitText = N["bullshit"].Value;
@@ -74,6 +78,17 @@ public class ITBullshitHelper : MonoBehaviour
         firstPartString = sb.ToString();
         secondPartString = sb2.ToString();
 
+
+        Debug.Log("egyik: " + firstPartString);
+        Debug.Log("hossz: " + firstPartString.Length);
+        Debug.Log("másik: " + secondPartString);
+        Debug.Log("hossz: " + secondPartString.Length);
+
+        if(firstPartString.Length >60 || secondPartString.Length>60)
+        {
+            Start();
+        }
+
         bullshitCharSetFirst.AddRange(firstPartString);
         bullshitCharSetSecond.AddRange(secondPartString);
     }
@@ -106,6 +121,14 @@ public class ITBullshitHelper : MonoBehaviour
 
             CheckFinishing();
         }
+        if(firstDone&&secondDone)
+        {
+            mainCameraText.text = "<size=50>YOU ARE READY</size>\n\n<color=cyan><size=30>PRESS ESC OR ENTER TO MAIN MENU</size></color>";
+            if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.Return))
+            {
+                SceneManager.LoadScene("start_scene");
+            }
+        }
     }
 
     private void CheckFinishing()
@@ -113,10 +136,12 @@ public class ITBullshitHelper : MonoBehaviour
         if (correctCharNumbFirst == bullshitCharSetFirst.Count)
         {
             firstDone = true;
+            scriptPolygonCharacter.enabled = false;
         }
         if (correctCharNumbSecond == bullshitCharSetSecond.Count)
         {
             secondDone = true;
+            scriptFlesh.enabled = false;
         }
     }
 
@@ -127,8 +152,8 @@ public class ITBullshitHelper : MonoBehaviour
         if (c == bullshitCharSetFirst[correctCharNumbFirst])
         {
             GunAim gunAim = (GunAim)GameObject.Find("GunAim").GetComponent("GunAim");
-            float mouseX = 254f + UnityEngine.Random.Range(-24f, 30f);
-            float mouseY = 242f + UnityEngine.Random.Range(-40f, 60f);
+            float mouseX = Screen.width* 0.269f + UnityEngine.Random.Range(-30f, 30f);
+            float mouseY = Screen.height* ASPECT_RATIO_MULTIPLIER + UnityEngine.Random.Range(-40f, 60f);
             gunAim.mouseX = mouseX;
             gunAim.mouseY = mouseY;
 
@@ -172,8 +197,8 @@ public class ITBullshitHelper : MonoBehaviour
         if (c == bullshitCharSetSecond[correctCharNumbSecond])
         {
             GunAim gunAim = (GunAim)GameObject.Find("GunAim").GetComponent("GunAim");
-            float mouseX = 589f + UnityEngine.Random.Range(-44f, 30f);
-            float mouseY = 236f + UnityEngine.Random.Range(-26f, 40f);
+            float mouseX = Screen.width* 0.670f + UnityEngine.Random.Range(-30f, 30f);
+            float mouseY = Screen.height* ASPECT_RATIO_MULTIPLIER + UnityEngine.Random.Range(-26f, 30f);
             gunAim.mouseX = mouseX;
             gunAim.mouseY = mouseY;
 

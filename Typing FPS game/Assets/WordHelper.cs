@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class WordHelper : MonoBehaviour {
 
+    private static bool notDefaultData = false;
 
-    ArrayList verbs = new ArrayList();
+    static ArrayList verbs = new ArrayList();
     string[] verbArray = {"implement", "utilize", "integrate", "streamline", "optimize", "evolve", "transform", "embrace",
     "enable", "orchestrate", "leverage", "reinvent", "aggregate", "architect", "enhance", "incentivize", "morph", "empower",
     "envisioneer", "monetize", "harness", "facilitate", "seize", "disintermediate", "synergize", "strategize", "deploy",
@@ -16,7 +17,7 @@ public class WordHelper : MonoBehaviour {
     "productize", "redefine",
     "recontextualize" };
 
-    ArrayList adjectives = new ArrayList();
+    static ArrayList adjectives = new ArrayList();
     string[] adjArray = {"clicks-and-mortar", "value-added", "vertical", "proactive", "robust", "revolutionary", "scalable",
     "leading-edge", "innovative", "intuitive", "strategic", "e-business", "mission-critical", "sticky", "one-to-one",
     "24/7", "end-to-end", "global", "B2B", "B2C", "granular", "frictionless", "virtual", "viral", "dynamic", "24/365",
@@ -26,7 +27,7 @@ public class WordHelper : MonoBehaviour {
     "integrated", "impactful", "wireless", "transparent", "next-generation", "cutting-edge", "user-centric", "visionary",
     "customized", "ubiquitous", "plug-and-play", "collaborative", "compelling", "holistic", "rich" };
 
-    ArrayList nouns = new ArrayList();
+    static ArrayList nouns = new ArrayList();
     string[] nounArray = {"synergies", "web-readiness", "paradigms", "markets", "partnerships", "infrastructures", "platforms",
     "initiatives", "channels", "eyeballs", "communities", "ROI", "solutions", "e-tailers", "e-services", "action-items",
     "portals", "niches", "technologies", "content", "vortals", "supply-chains", "convergence", "relationships",
@@ -34,19 +35,32 @@ public class WordHelper : MonoBehaviour {
     "mindshare", "deliverables", "users", "schemas", "networks", "applications", "metrics", "e-business", "functionalities",
     "experiences", "web services", "methodologies" };
 
-    ArrayList sentences = new ArrayList();
+    static ArrayList sentences = new ArrayList();
     string[] sentenceArray = {"Close But No Cigar", "Hear, Hear", "Right Out of the Gate", "Quality Time", "Burst Your Bubble", "Two Down, One to Go",
     "Dropping Like Flies", "Top Drawer", "An Arm and a Leg", "Drawing a Blank", "Man of Few Words", "Knock Your Socks Off", "Roll With the Punches",
     "Hands Down", "Fool's Gold", "Hit Below The Belt", "There's No I in Team", "Back to Square One", "A Piece of Cake", "Right Off the Bat",
     "Cup Of Joe", "In a Pickle", "Elephant in the Room", "Mouth-watering", "Quality Time"};
 
+    public static string[] first, second, third, fourth;
 
     // Use this for initialization
     void Start () {
-        verbs.AddRange(verbArray);
-        adjectives.AddRange(adjArray);
-        nouns.AddRange(nounArray);
-        sentences.AddRange(sentenceArray);
+        if (!notDefaultData)
+        {
+            verbs.Clear();adjectives.Clear();nouns.Clear();sentences.Clear();
+            verbs.AddRange(verbArray);
+            adjectives.AddRange(adjArray);
+            nouns.AddRange(nounArray);
+            sentences.AddRange(sentenceArray);
+        }
+        else
+        {
+            verbs.Clear(); adjectives.Clear(); nouns.Clear(); sentences.Clear();
+            verbs.AddRange(first);
+            adjectives.AddRange(second);
+            nouns.AddRange(third);
+            sentences.AddRange(fourth);
+        }
     }
 	
 	// Update is called once per frame
@@ -72,5 +86,14 @@ public class WordHelper : MonoBehaviour {
     {
         int index4 = UnityEngine.Random.Range(0, sentences.Count - 1);
         return (string)sentences[index4];
+    }
+
+    public void LoadData(string[] fir, string[] sec, string[] thi, string[] fou)
+    {
+        notDefaultData = true;
+        first = fir;
+        second = sec;
+        third = thi;
+        fourth = fou;
     }
 }

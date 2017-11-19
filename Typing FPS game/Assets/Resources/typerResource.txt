@@ -1,0 +1,4 @@
+elso,masodik,harmadik,negyedik
+elso1,masodik1,harmadik1,negyedik1,otodik1
+hatodik2,hetedik2,nyolcadik3
+elsomasodikharmadik,harmadiknegyedik,otodik hetedik,upsz ipsz

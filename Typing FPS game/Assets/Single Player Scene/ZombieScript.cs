@@ -72,7 +72,7 @@ public class ZombieScript : MonoBehaviour
     }
     IEnumerator StartChase()
     {
-        yield return new WaitForSeconds(Random.Range(0.5f, 3f));
+        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
         anim.SetTrigger("StartWalk");
         // itt kezdünk el felé menni
         letsMove = true;

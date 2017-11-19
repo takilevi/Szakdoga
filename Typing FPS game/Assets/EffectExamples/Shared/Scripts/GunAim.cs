@@ -27,7 +27,7 @@ public class GunAim:MonoBehaviour
         //mouseX = Input.mousePosition.x;
         //mouseY = Input.mousePosition.y;
         //mouseZ = Input.mousePosition.z;
-        //Debug.Log("x mouse: "+mouseX+" y mouse: "+mouseY+" z mouse: "+ mouseZ);
+        //Debug.Log("x mouse: "+mouseX/Screen.width+" y mouse: "+mouseY/Screen.height+" z mouse: "+ mouseZ);
         //Debug.Log("y koord: " + mouseY+"screen height: "+Screen.height);
         //Debug.Log("Lookat transf: "+ parentCamera.ScreenToWorldPoint(new Vector3(mouseX, mouseY, mouseZ)));
         

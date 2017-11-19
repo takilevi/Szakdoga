@@ -158,8 +158,20 @@ public class PlayerHealth : MonoBehaviour {
                 }
             }
         }
-        
 
+    }
+
+    private void Update()
+    {
+
+        if (isDead)
+        {
+            if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.Return))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene("start_scene");
+            }
+        }
     }
 
 
@@ -187,15 +199,10 @@ public class PlayerHealth : MonoBehaviour {
         // Set the death flag so this function won't be called again.
         isDead = true;
         healthSlider.value = float.NaN;
-        mainCameraText.text = "<size=60>GAME OVER</size>\n\n<color=cyan><size=15>GOOD LUCK NEXT TIME</size></color>";
+        mainCameraText.text = "<size=60>GAME OVER</size>\n\n<color=cyan><size=15>GOOD LUCK NEXT TIME</size>\n<size=11>PRESS ESC OR ENTER TO MAIN MENU</size></color>";
         Time.timeScale = 0;
-        StartCoroutine(LoadNextSceneAfterWait());
     }
-    IEnumerator LoadNextSceneAfterWait()
-    {
-        yield return new WaitForSeconds(6f);
-        SceneManager.LoadScene("start_scene");
-    }
+
     public int getCurHealth()
     {
         return currentHealth;

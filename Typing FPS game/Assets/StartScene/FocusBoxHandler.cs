@@ -8,15 +8,18 @@ public class FocusBoxHandler : MonoBehaviour {
     public GameObject singlePlayer;
     public GameObject multiPlayer;
     public GameObject tutorial;
+    public GameObject loadFile;
 
     private GameObject focusedGameObject;
     private Text singlePlayerText;
     private Text multiPlayerText;
     private Text tutorialText;
+    private Text loadFileText;
 
     private const string SINGLE_PLAYER = "SINGLE PLAYER";
     private const string MULTI_PLAYER = "MULTI PLAYER";
     private const string TUTORIAL = "TUTORIAL";
+    private const string LOAD_FILE = "LOAD FILE";
     MenuChoose menuScript;
 
 
@@ -30,10 +33,12 @@ public class FocusBoxHandler : MonoBehaviour {
         singlePlayerText = singlePlayer.GetComponent<UnityEngine.UI.Text>();
         multiPlayerText = multiPlayer.GetComponent<UnityEngine.UI.Text>();
         tutorialText = tutorial.GetComponent<UnityEngine.UI.Text>();
+        loadFileText = loadFile.GetComponent<UnityEngine.UI.Text>();
 
         singlePlayer.GetComponent<UnityEngine.UI.Shadow>().enabled = false;
         multiPlayer.GetComponent<UnityEngine.UI.Shadow>().enabled = false;
         tutorial.GetComponent<UnityEngine.UI.Shadow>().enabled = false;
+        loadFile.GetComponent<UnityEngine.UI.Shadow>().enabled = false;
 
         GameObject levelManager = GameObject.Find("LevelManager");
         menuScript = (MenuChoose)levelManager.GetComponent(typeof(MenuChoose));
@@ -76,13 +81,13 @@ public class FocusBoxHandler : MonoBehaviour {
         singlePlayerText.text = SINGLE_PLAYER;
         multiPlayerText.text = MULTI_PLAYER;
         tutorialText.text = TUTORIAL;
+        loadFileText.text = LOAD_FILE;
     }
     public void FirstCapitalTypeing()
     {
         
         foreach (char c in Input.inputString)
         {
-            Debug.Log("char cucc: " + c);
             if ((c == '\n') || (c == '\r') || (c == '\b')) // enter/return
             {
                 //do nothing
@@ -103,6 +108,11 @@ public class FocusBoxHandler : MonoBehaviour {
                 {
                     focusedGameObject = tutorial;
                     menuScript.TakeThisObject(tutorial);
+                }
+                if (char.ToUpper(c).Equals(char.ToUpper(loadFileText.text.ToCharArray()[0])))
+                {
+                    focusedGameObject = loadFile;
+                    menuScript.TakeThisObject(loadFile);
                 }
                 return;
             }
