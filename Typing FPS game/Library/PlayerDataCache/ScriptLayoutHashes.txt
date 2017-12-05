@@ -159,7 +159,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Waypoint
 7e8b702b44a0880d14f769fb98d7eac2 Assembly-UnityScript.dll:.ValueToExample
 2f7158be76c76495956b12fbd3e8642e Assembly-CSharp.dll:.Turret
-3fe60e1ceebec751512307de77d9aa91 Assembly-CSharp.dll:.GlobalController
+17ecef6c48063d8dc2168f8b01791bb6 Assembly-CSharp.dll:.GlobalController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Gizmo
 476c4c0e8669ff4a7fc5d810e2e81dfe Assembly-CSharp.dll:.MyManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FlamerBehaviour

@@ -58,8 +58,7 @@ public class TriggerScript : NetworkBehaviour
       if (gameObject.name.EndsWith("(Clone)"))
       {
         CmdClientReadySign();
-        Debug.Log("THIS IS A CLONE: " + gameObject.name);
-        myManager.EnterPressedByClient(gameObject.name);
+        
       }
       else
       {
@@ -81,6 +80,8 @@ public class TriggerScript : NetworkBehaviour
   {
     labelTag = "Player TWO\nready";
     commonText.text += labelTag;
+
+    myManager.EnterPressedByClient(gameObject.name);
   }
 
   public void ThisIsYourGlobal(GlobalController glob)

@@ -105,8 +105,8 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 891
-  m_MinSize: {x: 436, y: 492}
-  m_MaxSize: {x: 18006, y: 14042}
+  m_MinSize: {x: 438, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
   controlID: 11
 --- !u!114 &6
@@ -129,8 +129,8 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 891
-  m_MinSize: {x: 436, y: 492}
-  m_MaxSize: {x: 18006, y: 14042}
+  m_MinSize: {x: 438, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 12
 --- !u!114 &7
@@ -151,7 +151,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 710
+    width: 733
     height: 891
   m_MinSize: {x: 336, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
@@ -173,7 +173,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 710
+    width: 733
     height: 620
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -202,7 +202,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 620
-    width: 710
+    width: 733
     height: 271
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
@@ -224,10 +224,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 214
+    width: 221
     height: 271
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -247,9 +247,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 214
+    x: 221
     y: 0
-    width: 496
+    width: 512
     height: 271
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
@@ -272,12 +272,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 710
+    x: 733
     y: 0
-    width: 570
+    width: 547
     height: 891
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
@@ -368,7 +368,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 708
+    width: 731
     height: 599
   m_SceneLighting: 1
   lastFramingTime: 26855.423163555977
@@ -442,7 +442,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 708
+    width: 731
     height: 599
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -452,10 +452,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -354
-    m_HBaseRangeMax: 354
-    m_VBaseRangeMin: -199.125
-    m_VBaseRangeMax: 199.125
+    m_HBaseRangeMin: -365.5
+    m_HBaseRangeMax: 365.5
+    m_VBaseRangeMin: -205.59375
+    m_VBaseRangeMax: 205.59375
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -472,25 +472,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 708
+      width: 731
       height: 582
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 354, y: 291}
+    m_Translation: {x: 365.5, y: 291}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -354
+      x: -365.5
       y: -291
-      width: 708
+      width: 731
       height: 582
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 708, y: 599}
+  m_LastWindowPixelSize: {x: 731, y: 599}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -518,13 +518,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 712
-    width: 212
+    width: 219
     height: 250
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: f080ffff0282ffff0884ffff7894ffff5295ffff5897ffff14bdfffff0bdfffff6bfffff1afcffff00000000
+    m_ExpandedIDs: 2693ffff3694ffff3c96ffffb6baffffc4bbffffcebdffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -569,9 +569,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 216
+    x: 223
     y: 712
-    width: 492
+    width: 508
     height: 250
   m_SearchFilter:
     m_NameFilter: 
@@ -585,19 +585,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/PyroParticles/Prefab/Prefab
+    - Assets/Multiplayer
   m_ViewMode: 1
   m_StartGridSize: 44
   m_LastFolders:
-  - Assets/PyroParticles/Prefab/Prefab
+  - Assets/Multiplayer
   m_LastFoldersGridSize: 44
   m_LastProjectPath: D:\GitHub\Szakdoga\Typing FPS game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 631}
-    m_SelectedIDs: 58430000
-    m_LastClickedID: 17240
-    m_ExpandedIDs: 0000000058270000b82a0000282e0000643200005836000068360000d2360000c0370000d63a0000803c0000b83c00002443000000ca9a3bffffff7f
+    m_SelectedIDs: aa3c0000
+    m_LastClickedID: 15530
+    m_ExpandedIDs: 0000000054270000b42a0000242e0000603200005436000064360000ce360000bc370000d23a00007c3c0000b43c00002043000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -625,7 +625,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000058270000b82a0000282e0000643200005836000068360000d2360000c0370000d63a0000803c0000b83c000024430000
+    m_ExpandedIDs: 0000000054270000b42a0000242e0000603200005436000064360000ce360000bc370000d23a00007c3c0000b43c000020430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: cc060000666eebff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -735,9 +735,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 712
+    x: 735
     y: 92
-    width: 568
+    width: 545
     height: 870
 --- !u!114 &20
 MonoBehaviour:

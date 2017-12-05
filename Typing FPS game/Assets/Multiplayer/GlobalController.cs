@@ -29,17 +29,41 @@ public class GlobalController : NetworkBehaviour
   private const string playerOne = "Player ONE: ";
   private const string playerTwo = "Player TWO: ";
 
+  [SyncVar]
+  private float timeLeft;
+
+  public bool displayWord;
+
   // Use this for initialization
   void Start()
   {
     startCounter = false;
     playerOneReady = playerTwoReady = false;
+    timeLeft = 6f;
+    displayWord = false;
   }
 
   // Update is called once per frame
   void Update()
   {
     globalText.text = textForEveryone;
+
+    if(playerOneReady && playerTwoReady && !displayWord)
+    {
+      
+      timeLeft -= Time.deltaTime;
+
+      textForEveryone = "COUNT DOWN:\n"+timeLeft;
+
+      if (timeLeft <= 0)
+      {
+        displayWord = true;
+      }
+    }
+    if(displayWord)
+    {
+      textForEveryone = "HELLO";
+    }
   }
 
   public void ClientCheckedInTrigger()
@@ -88,7 +112,7 @@ public class GlobalController : NetworkBehaviour
       case "Player1": playerOneReady = true; break;
       case "Player2": playerTwoReady = true; break;
     }
-
+    Debug.Log("player1: " + playerOneReady + " player2: " + playerTwoReady);
   }
 
 
