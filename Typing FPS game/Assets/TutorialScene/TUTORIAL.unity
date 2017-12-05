@@ -1361,9 +1361,9 @@ GameObject:
   - component: {fileID: 869130916}
   - component: {fileID: 869130915}
   - component: {fileID: 869130914}
+  - component: {fileID: 869130917}
   - component: {fileID: 869130919}
   - component: {fileID: 869130918}
-  - component: {fileID: 869130917}
   - component: {fileID: 869130922}
   m_Layer: 0
   m_Name: Flesh
@@ -1434,7 +1434,7 @@ GUITexture:
   m_GameObject: {fileID: 869130913}
   m_Enabled: 1
   m_Texture: {fileID: 2800000, guid: 60d3e00806d35c34c9d5ced6dc3a270c, type: 3}
-  m_Color: {r: 0.6397059, g: 0.056444652, b: 0.056444652, a: 0.319}
+  m_Color: {r: 0.43529412, g: 0.023529412, b: 0.023529412, a: 0.49019608}
   m_PixelInset:
     serializedVersion: 2
     x: 0
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   npcNamePos: {fileID: 869130920}
   npcName: 
   IsCorrectType: 1
-  flashColour: {r: 0.33088237, g: 0.060823966, b: 0.060823966, a: 0}
+  flashColour: {r: 0.4117647, g: 0.05882353, b: 0.05882353, a: 1}
   flashSpeed: 7
   typeingFont: {fileID: 12800000, guid: 3741e6e0e12e8694eb1f00c51abda1d2, type: 3}
 --- !u!132 &869130919

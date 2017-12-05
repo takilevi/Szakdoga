@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -96,6 +98,9 @@
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+    <Compile Include="Assets\Fire_NPC\Flamer\Scripts\FlamerManager.cs" />
+    <Compile Include="Assets\Multiplayer\FlamerBehaviour.cs" />
+    <Compile Include="Assets\Multiplayer\GlobalController.cs" />
     <Compile Include="Assets\iTweenExamples\AccurateLob\Scripts\AccurateLob.cs" />
     <Compile Include="Assets\iTweenExamples\AccurateLob\Scripts\Bomb.cs" />
     <Compile Include="Assets\iTweenExamples\AnimatingGUITextures\Scripts\PresentationScreen.cs" />
@@ -151,8 +156,11 @@
     <Compile Include="Assets\Level3_ControllerSecond.cs" />
     <Compile Include="Assets\LightScript.cs" />
     <Compile Include="Assets\MissileScript.cs" />
+    <Compile Include="Assets\Multiplayer\TriggerScript.cs" />
+    <Compile Include="Assets\Multiplayer\MyManager.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\PlayGunShoot.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
@@ -169,8 +177,8 @@
     <Compile Include="Assets\StartScene\FocusBoxSubMenu.cs" />
     <Compile Include="Assets\StartScene\MenuChoose.cs" />
     <Compile Include="Assets\TerroristScript.cs" />
-    <Compile Include="Assets\TutorialScene\ITBullshitHelper.cs" />
     <Compile Include="Assets\TutorialScene\NPCTag.cs" />
+    <Compile Include="Assets\TutorialScene\TextHelper.cs" />
     <Compile Include="Assets\TyperHelper.cs" />
     <Compile Include="Assets\WordHelper.cs" />
   </ItemGroup>
