@@ -32,7 +32,7 @@ public class MyManager : NetworkManager
       GameObject playerTwo = null;
       foreach (var item in clientDictionary)
       {
-        Debug.Log("Key: " + item.Key + " Value: " + item.Value);
+        //Debug.Log("Key: " + item.Key + " Value: " + item.Value);
         if(item.Value.name.Equals("Player1") || item.Value.name.Equals("player1(Clone)"))
         {
           playerOne = item.Value.gameObject;
@@ -101,7 +101,9 @@ public class MyManager : NetworkManager
     switch (playerName)
     {
       case "Player1": globalController.EnterPressedByClient("Player1"); break;
-      case "Player2": globalController.EnterPressedByClient("Player1"); break;
+      case "player1(Clone)": globalController.EnterPressedByClient("Player1"); break;
+      case "Player2": globalController.EnterPressedByClient("Player2"); break;
+      case "player2(Clone)": globalController.EnterPressedByClient("Player2"); break;
     }
 
   }

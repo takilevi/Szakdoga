@@ -56,11 +56,12 @@ public class TriggerScript : NetworkBehaviour
       labelTag += "\nready";
       Debug.Log("Enter pressed name: " + gameObject.name);
 
-      if (gameObject.name.EndsWith("(clone)"))
+      if (gameObject.name.EndsWith("(Clone)"))
       {
-        commonText.text += "\nready";
-        Debug.Log("THIS IS A CLONE: " + gameObject.name.Substring(0, 7));
-        myManager.EnterPressedByClient(gameObject.name.Substring(0, 7));
+        //commonText.text += "\nready";
+        CmdClientReadySign();
+        Debug.Log("THIS IS A CLONE: " + gameObject.name);
+        myManager.EnterPressedByClient(gameObject.name);
       }
       else
       {
@@ -69,14 +70,13 @@ public class TriggerScript : NetworkBehaviour
       }
     }
 
-    /*if (globalReference == null)
-    {
-      //globalReference = (GlobalController)globalControllerGameObject.GetComponent<GlobalController>();
-      globalReference = (GlobalController)GameObject.Find("GlobalControllerGameObject").GetComponent<GlobalController>();
-      Debug.Log("készvagyok a betöltéssel: " + globalReference);
-      myManager.SetGlobalController(globalReference);
-    }*/
+  }
 
+  [Command]
+  public void CmdClientReadySign()
+  {
+    labelTag = "Player TWO\nready";
+    commonText.text += labelTag;
   }
 
   public void ThisIsYourGlobal(GlobalController glob)
