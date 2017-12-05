@@ -100,6 +100,13 @@ public class GlobalController : NetworkBehaviour
       case 2: playerTwoScore++; break;
     }
 
+    //ez azért kell mert nyert valaki, a dictionary-t visszaállítjuk nullra
+    displayWord = false;
+    wordDisplayed = false;
+    textForEveryone = "PRESS ENTER IF YOU ARE READY.";
+    timeLeft = 5f;
+    playerOneReady = false;
+    playerTwoReady = false;
   }
 
   void OnChangeScoreOne(int plOneScore)

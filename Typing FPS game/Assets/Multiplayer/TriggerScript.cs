@@ -59,20 +59,26 @@ public class TriggerScript : NetworkBehaviour
         if (item.Key == true)
         {
           toType = item.Value;
+          currectCharSet = new List<char>();
+          correctCharNumb = 0;
           currectCharSet.AddRange(toType);
         }
       }
 
       Debug.Log("megkaptam azt a szart: " + toType + " és a charset: " + currectCharSet);
     }
-    Debug.Log("probalom elérni a szöveget: "+myManager.GetGlobalController().textForEveryone);
+
+    //Debug.Log("probalom elérni a szöveget: "+myManager.GetGlobalController().textForEveryone);
     if(myManager.TypeStart() == null && toType.Length == 0 
       && !myManager.GetGlobalController().textForEveryone.Contains("PRESS ENTER")
-      && !myManager.GetGlobalController().textForEveryone.Contains("COUNT DOWN"))
+      && !myManager.GetGlobalController().textForEveryone.Contains("COUNT DOWN")
+      && myManager.GetGlobalController().textForEveryone != null)
     {
       Debug.Log("bejutottunk az új elágazásba");
 
       toType = myManager.GetGlobalController().textForEveryone;
+      correctCharNumb = 0;
+      currectCharSet = new List<char>();
       currectCharSet.AddRange(toType);
     }
 
@@ -90,12 +96,17 @@ public class TriggerScript : NetworkBehaviour
         CmdScoreOnClient(2);
       }
 
+      //ez a visszaállítás rész!!!
+      toType = "";
+      typerText.text = "";
+      currentlyCorrect = "";
+      currectCharSet = new List<char>();
+      correctCharNumb = 0;
       fireIt = false;
     }
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
-      labelTag += "\nready";
       Debug.Log("Enter pressed name: " + gameObject.name);
 
       if (gameObject.name.EndsWith("(Clone)"))
@@ -105,6 +116,7 @@ public class TriggerScript : NetworkBehaviour
       }
       else
       {
+        labelTag += "\nready";
         commonText.text += "\nready";
         myManager.EnterPressedByClient(gameObject.name);
       }
@@ -121,7 +133,7 @@ public class TriggerScript : NetworkBehaviour
   [Command]
   public void CmdClientReadySign()
   {
-    labelTag = "Player TWO\nready";
+    labelTag += "\nready";
     commonText.text += labelTag;
 
     myManager.EnterPressedByClient(gameObject.name);
@@ -143,7 +155,7 @@ public class TriggerScript : NetworkBehaviour
       }
       else
       {
-        Debug.Log("checkouljuk az írást");
+        Debug.Log("checkouljuk az írást, de mi is a szó?: "+toType+" charset: "+currectCharSet + " eddig ennyi jó: "+currentlyCorrect);
         if (Char.ToUpper(c) == currectCharSet[correctCharNumb])
         {
           Debug.Log("korrekt");
@@ -159,5 +171,15 @@ public class TriggerScript : NetworkBehaviour
     {
       fireIt = true;
     }
+  }
+
+
+  public void DoTheCleanup()
+  {
+    toType = "";
+    typerText.text = "";
+    currentlyCorrect = "";
+    currectCharSet = new List<char>();
+    correctCharNumb = 0;
   }
 }

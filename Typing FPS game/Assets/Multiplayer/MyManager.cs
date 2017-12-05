@@ -11,15 +11,47 @@ public class MyManager : NetworkManager
   public static GlobalController globalController;
   public bool firstCheck;
 
+  public bool doTheCleanup;
+
   void Start()
   {
     globalCounter = 0;
     firstCheck = false;
-    
+    doTheCleanup = false;
+
+
   }
   private void Update()
   {
-    if(globalController==null && ClientScene.objects.Count != 0)
+    if(doTheCleanup)
+    {
+      var clientDictionary = ClientScene.objects;
+
+      GameObject playerOne = null;
+      GameObject playerTwo = null;
+      foreach (var item in clientDictionary)
+      {
+        Debug.Log("Key: " + item.Key + " Value: " + item.Value);
+        if (item.Value.name.Equals("Player1") || item.Value.name.Equals("player1(Clone)"))
+        {
+          playerOne = item.Value.gameObject;
+        }
+        if (item.Value.name.Equals("Player2") || item.Value.name.Equals("player2(Clone)"))
+        {
+          playerTwo = item.Value.gameObject;
+        }
+      }
+
+      var playerScriptOne = (TriggerScript)playerOne.GetComponent<TriggerScript>();
+      playerScriptOne.DoTheCleanup();
+
+      var playerScriptTwo = (TriggerScript)playerTwo.GetComponent<TriggerScript>();
+      playerScriptTwo.DoTheCleanup();
+
+      doTheCleanup = false;
+    }
+
+    if (globalController==null && ClientScene.objects.Count != 0)
     {
       globalController = (GlobalController)GameObject.Find("GlobalControllerGameObject").GetComponent<GlobalController>();
     }
@@ -116,11 +148,12 @@ public class MyManager : NetworkManager
       case 1: globalController.ScoreForPlayer(playerNumber); break;
       case 2: globalController.ScoreForPlayer(playerNumber); break;
     }
-
+    doTheCleanup = true;
   }
 
   public Dictionary<bool, string> TypeStart()
   {
+    if(globalController.TypeStart() == null) { return null; }
     return globalController.TypeStart();
   }
 
