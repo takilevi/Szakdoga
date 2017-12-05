@@ -82,7 +82,13 @@ public class TriggerScript : NetworkBehaviour
       currectCharSet.AddRange(toType);
     }
 
-    if (toType != "" && correctCharNumb != currectCharSet.Count) { Debug.Log("check"); CharCheck(); }
+    if (toType != "" && correctCharNumb != currectCharSet.Count)
+    { Debug.Log("check");
+      CharCheck();
+      if (myManager.GetGlobalController().textForEveryone.Contains("PRESS ENTER"))
+      {
+        DoTheCleanup();
+      } }
 
     if (fireIt)
     {
