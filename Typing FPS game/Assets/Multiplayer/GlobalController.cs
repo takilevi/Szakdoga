@@ -39,7 +39,7 @@ public class GlobalController : NetworkBehaviour
   // Update is called once per frame
   void Update()
   {
-
+    globalText.text = textForEveryone;
   }
 
   public void ClientCheckedInTrigger()
@@ -50,16 +50,12 @@ public class GlobalController : NetworkBehaviour
   {
     if(clients==2)
     {
-      if (globalText == null)
-      {
-        globalText = (Text)GameObject.Find("GlobalText").GetComponent(typeof(Text));
-      }
-      Debug.Log("enterre várunk itt, a globaltext: " + globalText);
       textForEveryone = "PRESS ENTER IF YOU ARE READY.";
     }
   }
   public void DisplayGlobalText(string toDisplay)
   {
+    textForEveryone = toDisplay;
     globalText.text = toDisplay;
   }
   public void ScoreForPlayer(int playerNumber)
