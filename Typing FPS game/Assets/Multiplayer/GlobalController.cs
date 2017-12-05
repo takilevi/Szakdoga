@@ -9,7 +9,7 @@ public class GlobalController : NetworkBehaviour
 
   public bool startCounter;
 
-  [SyncVar]
+  [SyncVar(hook = "OnChecking")]
   public int clientsReady;
 
   [SyncVar(hook = "OnChangeScoreOne")]
@@ -28,7 +28,7 @@ public class GlobalController : NetworkBehaviour
 
   private const string playerOne = "Player ONE: ";
   private const string playerTwo = "Player TWO: ";
-  
+
   // Use this for initialization
   void Start()
   {
@@ -39,24 +39,23 @@ public class GlobalController : NetworkBehaviour
   // Update is called once per frame
   void Update()
   {
-    
-  }
-
-  public void WaitToReadySign()
-  {
-    if(globalText == null)
-    {
-      globalText = (Text)GameObject.Find("GlobalText").GetComponent(typeof(Text));
-    }
-    textForEveryone = "PRESS ENTER IF YOU ARE READY.";
 
   }
+
   public void ClientCheckedInTrigger()
   {
     clientsReady++;
-    if (clientsReady == 2)
+  }
+  public void OnChecking(int clients)
+  {
+    if(clients==2)
     {
-      WaitToReadySign();
+      if (globalText == null)
+      {
+        globalText = (Text)GameObject.Find("GlobalText").GetComponent(typeof(Text));
+      }
+      Debug.Log("enterre várunk itt, a globaltext: " + globalText);
+      textForEveryone = "PRESS ENTER IF YOU ARE READY.";
     }
   }
   public void DisplayGlobalText(string toDisplay)
