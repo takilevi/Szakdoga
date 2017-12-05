@@ -118,4 +118,14 @@ public class MyManager : NetworkManager
     }
 
   }
+
+  public Dictionary<bool, string> TypeStart()
+  {
+    return globalController.TypeStart();
+  }
+
+  public GlobalController GetGlobalController()
+  {
+    return globalController;
+  }
 }

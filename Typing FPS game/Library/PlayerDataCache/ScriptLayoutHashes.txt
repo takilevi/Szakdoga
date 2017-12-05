@@ -159,12 +159,12 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Waypoint
 7e8b702b44a0880d14f769fb98d7eac2 Assembly-UnityScript.dll:.ValueToExample
 2f7158be76c76495956b12fbd3e8642e Assembly-CSharp.dll:.Turret
-17ecef6c48063d8dc2168f8b01791bb6 Assembly-CSharp.dll:.GlobalController
+d755c4f3e6dec921045711f467966e19 Assembly-CSharp.dll:.GlobalController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Gizmo
 476c4c0e8669ff4a7fc5d810e2e81dfe Assembly-CSharp.dll:.MyManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FlamerBehaviour
 ec4253b21b64232296ab0860c616a4ca Assembly-CSharp.dll:.SlidingMenu
-a96f790d2bd1ea3f77fc9b21bef308a6 Assembly-CSharp.dll:.TriggerScript
+7684e3c0abf859bd93a5e8b2d4b3da14 Assembly-CSharp.dll:.TriggerScript
 ee8a4e5e09beace7544b4577d52051db Assembly-CSharp.dll:.PlayerHealth
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Platform
 1dd5afbe72b78672a791f893fdff3e5f Assembly-CSharp.dll:DigitalRuby.PyroParticles.FireBaseScript
