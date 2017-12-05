@@ -76,10 +76,12 @@ public class GlobalController : NetworkBehaviour
 
   void OnChangeScoreOne(int plOneScore)
   {
+    playerOneScore = plOneScore;
     scoreText.text = playerOne + plOneScore + "\n" + playerTwo + playerTwoScore;
   }
   void OnChangeScoreTwo(int plTwoScore)
   {
+    playerTwoScore = plTwoScore;
     scoreText.text = playerOne + playerOneScore + "\n" + playerTwo + plTwoScore;
   }
 

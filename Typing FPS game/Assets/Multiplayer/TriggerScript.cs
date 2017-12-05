@@ -40,15 +40,14 @@ public class TriggerScript : NetworkBehaviour
     if (Input.GetKeyDown(KeyCode.Space))
     {
       fireBallScript.StartCurrent();
-      var playerArray = gameObject.name.ToCharArray();
-      char player = playerArray[playerArray.Length - 1];
-      int playerNumber = (int)Char.GetNumericValue(player);
-      if (playerNumber == (-1))
+      if (gameObject.name.Equals("Player1"))
       {
-        playerNumber = 2;
+        CmdScoreOnClient(1);
       }
-      Debug.Log("player: " + playerNumber);
-      myManager.ScoreForPlayer(playerNumber);
+      else
+      {
+        CmdScoreOnClient(2);
+      }
     }
 
     if (Input.GetKeyDown(KeyCode.Return))
@@ -58,7 +57,6 @@ public class TriggerScript : NetworkBehaviour
 
       if (gameObject.name.EndsWith("(Clone)"))
       {
-        //commonText.text += "\nready";
         CmdClientReadySign();
         Debug.Log("THIS IS A CLONE: " + gameObject.name);
         myManager.EnterPressedByClient(gameObject.name);
@@ -70,6 +68,12 @@ public class TriggerScript : NetworkBehaviour
       }
     }
 
+  }
+
+  [Command]
+  public void CmdScoreOnClient(int player)
+  {
+    myManager.ScoreForPlayer(player);
   }
 
   [Command]
