@@ -1094,11 +1094,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa297ad5e3cb89243874fd7eac025fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelTag: 
   globalReference: {fileID: 0}
   globalControllerGameObject: {fileID: 1388582277018996, guid: 94da7029f0ef12543b2a81a7fed286bc,
     type: 2}
   nowPressEnter: 0
   typerText: {fileID: 0}
+  fireIt: 0
 --- !u!114 &114559176792625388
 MonoBehaviour:
   m_ObjectHideFlags: 1

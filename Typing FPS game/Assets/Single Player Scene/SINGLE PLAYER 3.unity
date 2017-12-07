@@ -24216,7 +24216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5200918b2447d704bb40b08a5961cbaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPrefab: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 2}
+  currentPrefab: {fileID: 1162142864056764, guid: 348cd19319b13104086c1b90bc1e13d2,
+    type: 2}
 --- !u!1001 &2063324419
 Prefab:
   m_ObjectHideFlags: 0

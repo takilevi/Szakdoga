@@ -17,6 +17,7 @@ public class GlobalController : NetworkBehaviour
 
   [SyncVar(hook = "OnChangeScoreOne")]
   public int playerOneScore;
+
   [SyncVar(hook = "OnChangeScoreTwo")]
   public int playerTwoScore;
 

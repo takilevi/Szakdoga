@@ -120,7 +120,8 @@ public class MenuChoose : MonoBehaviour
 
   void OpenFilePicker()
   {
-    var newTyperText = Resources.Load("typerResource") as TextAsset;
+    var newTyperText = Resources.Load("typerResourceFile") as TextAsset;
+    Debug.Log("a fájl tartalma: " + newTyperText);
 
     if (newTyperText == null)
     {
@@ -143,9 +144,10 @@ public class MenuChoose : MonoBehaviour
   }
   bool CheckFormatting(String rawText)
   {
-    string[] splitString = rawText.Split('\n');
+    Debug.Log(rawText);
+    string[] splitString = rawText.Split(new[] { Environment.NewLine },StringSplitOptions.None);
     if (splitString.Length != 4)
-    { return false; }
+    { Debug.Log("tagolás nemjo");  return false; }
 
     string[] firstArray = splitString[0].Split(',');
     string[] secondArray = splitString[1].Split(',');
@@ -155,22 +157,22 @@ public class MenuChoose : MonoBehaviour
     foreach (var item in firstArray)
     {
       if (item.Length >= 15)
-      { return false; }
+      { Debug.Log("egyes rekesz nemjo"); return false; }
     }
     foreach (var item in secondArray)
     {
       if (item.Length >= 15)
-      { return false; }
+      { Debug.Log("kettes rekesz nemjo"); return false; }
     }
     foreach (var item in thirdArray)
     {
       if (item.Length >= 15)
-      { return false; }
+      { Debug.Log(item); Debug.Log("hármas rekesz nemjo"); return false; }
     }
     foreach (var item in fourthArray)
     {
-      if (item.Length > 20)
-      { return false; }
+      if (item.Length > 24)
+      { Debug.Log(item); Debug.Log("négyes rekesz nemjo"); return false; }
     }
 
     wordScript.LoadData(firstArray, secondArray, thirdArray, fourthArray);

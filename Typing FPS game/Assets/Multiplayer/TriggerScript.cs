@@ -64,8 +64,6 @@ public class TriggerScript : NetworkBehaviour
           currectCharSet.AddRange(toType);
         }
       }
-
-      Debug.Log("megkaptam azt a szart: " + toType + " és a charset: " + currectCharSet);
     }
 
     //Debug.Log("probalom elérni a szöveget: "+myManager.GetGlobalController().textForEveryone);
@@ -74,8 +72,6 @@ public class TriggerScript : NetworkBehaviour
       && !myManager.GetGlobalController().textForEveryone.Contains("COUNT DOWN")
       && myManager.GetGlobalController().textForEveryone != null)
     {
-      Debug.Log("bejutottunk az új elágazásba");
-
       toType = myManager.GetGlobalController().textForEveryone;
       correctCharNumb = 0;
       currectCharSet = new List<char>();
@@ -161,7 +157,6 @@ public class TriggerScript : NetworkBehaviour
       }
       else
       {
-        Debug.Log("checkouljuk az írást, de mi is a szó?: "+toType+" charset: "+currectCharSet + " eddig ennyi jó: "+currentlyCorrect);
         if (Char.ToUpper(c) == currectCharSet[correctCharNumb])
         {
           Debug.Log("korrekt");

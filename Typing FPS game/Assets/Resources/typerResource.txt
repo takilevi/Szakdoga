@@ -1,4 +1,4 @@
-elso,masodik,harmadik,negyedik
-elso1,masodik1,harmadik1,negyedik1,otodik1
-hatodik2,hetedik2,nyolcadik3
-elsomasodikharmadik,harmadiknegyedik,otodik hatodik hetedik,upsz ipsz
+lineáris,mátrix,m-es,típusú,számok,valós,tétel,algebra,prefix,eleme,tranzitív
+multiplikatív,mûvelet,egyenlet,transzponált,polinom,szekvenciális,JavaScript,C#,Unity,Primefaces
+invertálható,pofonegyszerû,triviális,sinus-tétel,cosinus-tétel,optimumkalkulus,mediátor
+Forrás fúzionálás,Multidimensional,konzisztenciát biztosító,redundáns adatszerkezet,Backlog Grooming,material design,Bitcoin bubble
