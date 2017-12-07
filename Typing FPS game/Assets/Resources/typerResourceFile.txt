@@ -1,4 +1,4 @@
 lineáris,mátrix,m-es,típusú,számok,valós,tétel,algebra,prefix,eleme,tranzitív
 multiplikatív,művelet,egyenlet,transzponált,polinom,szekvenciális,JavaScript,C#,Unity,Primefaces
 invertálható,pofonegyszerű,triviális,sinus-tétel,cosinus-tétel,optimumcalc,mediátor
-Forrás fúzionálás,Multidimensional,konzisztenciát biztosító,redundáns adatszerkezet,Backlog Grooming,material design,Bitcoin bubble
+Forrás fúzionálás,Multidimensional,konzisztencia,redundáns adatszerkezet,Backlog Grooming,material design,Bitcoin bubble
